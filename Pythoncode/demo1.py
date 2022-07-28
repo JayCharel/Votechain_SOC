@@ -1,3 +1,4 @@
+import bcrypt
 '''
 class :
     def __init__(self, ):
@@ -39,23 +40,39 @@ class :
 
 
 '''
-
+'''
 from Crypto.PublicKey import RSA
 
 def initialize_wallet():
     private_key = RSA.generate(2048)
     public_key = key.publickey().export_key()
     return private_key, public_key
+'''
 
-def Signature():
+#def Signature():
     #Takes Message and Generates Signature based on Private Keys of Voter
     #
 
 
-def proof_of_work(self, block):
-    return  # hash
+#def proof_of_work(self, block):
+   # return  # hash
 
-def mine():
+
+#def mine():
 # should update Block index
 # transaction
 # Role of Miner- Verify Transaction
+
+
+def select_choices_for_voting():
+   no_of_choices = input()
+   for x in range(int(no_of_choices)):
+    password = input()
+    bytePwd = password.encode('utf-8')
+    mySalt = bcrypt.gensalt()
+    hash = bcrypt.hashpw(bytePwd, mySalt)
+    print(hash) 
+    
+
+select_choices_for_voting()
+
